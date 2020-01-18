@@ -1,0 +1,73 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+div {
+    float: left;
+}
+ul {
+    display: flex;
+    float: left;
+    width: 105vw;
+    margin: 0;
+    padding: 0;
+}
+ul:first-child {
+    margin-top: -1.15vw;
+}
+ul:not(:first-child) {
+    margin-top: calc(-1.5vw + 1px);
+}
+ul:nth-child(2n) {
+    margin-left: calc(-2.6vw + 1px);
+}
+
+li {
+    display: inline-block;
+    float: left;
+    margin-left: 1px;
+}
+.hexagon, .hexagon:before {
+    display: inline-block;
+    width: calc(5vw);
+    height: calc(5vw);
+    position: relative;
+    background-color: #222;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    overflow: hidden;
+    /* clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); */
+    /* 50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25% */
+    transition: all linear 1s;
+    box-sizing: border-box;
+    /* border: 1px solid transparent; */
+}
+.hexagon:before {
+    content: '';
+    /* transform: scale(0.95); */
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: calc(5vw - 2px);
+    height: calc(5vw - 2px);
+}
+/* .hexagon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    background-color: rgba(200, 200, 200, 0.05);
+} */
+.hexagon:hover {
+    transition-duration: 0s;
+    background-color: yellow;
+    /* border-color: yellow; */
+}
+.hexagon:hover:before {
+    transition-duration: 0s;
+    background-color: rgba(34, 34, 34, 0.877);
+    /* border-color: yellow; */
+}
